@@ -1,4 +1,3 @@
-import { CiUser } from "react-icons/ci";
 import InfoCard from "./InfoCard";
 import {
   MdOutlineCases,

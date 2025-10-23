@@ -1,5 +1,3 @@
-import { useEffect, useRef, useState } from "react";
-import { HiOutlineSun } from "react-icons/hi";
 import { useNavIsTop } from "../hooks/useNavIsTop";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";

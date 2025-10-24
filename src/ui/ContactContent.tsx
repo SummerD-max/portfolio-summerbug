@@ -15,6 +15,7 @@ function ContactContent() {
     if (formRef.current) {
       formRef.current.time.value = new Date().toString();
       sendEmail(formRef.current);
+      formRef.current.reset();
     }
   }
 

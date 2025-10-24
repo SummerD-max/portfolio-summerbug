@@ -1,23 +1,39 @@
 import { HiOutlineSun } from "react-icons/hi";
+import { useScrollspy } from "../hooks/useScrollSpy";
 
 function DesktopNav() {
+  const activeSection = useScrollspy(
+    ["home", "about", "skills", "projects", "contact"],
+    "-20% 0px -80% 0px",
+  );
+
   return (
     // 使用 hidden 和 md:flex 来控制可见性
     <div className="hidden items-center gap-7 md:flex">
       <ul className="flex items-center gap-7 p-2 text-lg">
-        <li className="transition-colors duration-300 hover:text-cyan-600">
+        <li
+          className={`transition-colors duration-300 hover:text-cyan-600 ${activeSection === "home" ? "text-cyan-600" : ""}`}
+        >
           <a href="#home">Home</a>
         </li>
-        <li className="transition-colors duration-300 hover:text-cyan-600">
+        <li
+          className={`transition-colors duration-300 hover:text-cyan-600 ${activeSection === "about" ? "text-cyan-600" : ""}`}
+        >
           <a href="#about">About</a>
         </li>
-        <li className="transition-colors duration-300 hover:text-cyan-600">
+        <li
+          className={`transition-colors duration-300 hover:text-cyan-600 ${activeSection === "skills" ? "text-cyan-600" : ""}`}
+        >
           <a href="#skills">Skills</a>
         </li>
-        <li className="transition-colors duration-300 hover:text-cyan-600">
+        <li
+          className={`transition-colors duration-300 hover:text-cyan-600 ${activeSection === "projects" ? "text-cyan-600" : ""}`}
+        >
           <a href="#projects">Projects</a>
         </li>
-        <li className="transition-colors duration-300 hover:text-cyan-600">
+        <li
+          className={`transition-colors duration-300 hover:text-cyan-600 ${activeSection === "contact" ? "text-cyan-600" : ""}`}
+        >
           <a href="#contact">Contact</a>
         </li>
       </ul>

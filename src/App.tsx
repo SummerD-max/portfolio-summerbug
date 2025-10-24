@@ -5,18 +5,28 @@ import Projects from "./sections/Projects";
 import Skills from "./sections/Skills";
 import Navbar from "./ui/Navbar";
 import BackToTopButton from "./ui/BackToTopButton";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Toaster } from "react-hot-toast";
+import { BrowserRouter } from "react-router";
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <div className="bg-sky-100">
-      <Navbar />
-      <Home />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
-      <BackToTopButton />
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <div className="bg-sky-100">
+          <Navbar />
+          <Home />
+          <About />
+          <Skills />
+          <Projects />
+          <Contact />
+          <BackToTopButton />
+        </div>
+      </BrowserRouter>
+      <Toaster />
+    </QueryClientProvider>
   );
 }
 

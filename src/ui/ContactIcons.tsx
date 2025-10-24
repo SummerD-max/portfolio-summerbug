@@ -3,6 +3,7 @@ import { IoLogoWechat } from "react-icons/io5";
 import { MdOutlineEmail } from "react-icons/md";
 import Popup from "./Popup";
 import { useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 function ContactIcons() {
   const [isCopied, setIsCopied] = useState(false);
@@ -55,13 +56,21 @@ function ContactIcons() {
           </div>
         </div>
 
-        <div
-          className={`fixed top-10 left-1/2 z-50 -translate-x-1/2 ${isCopied ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"} transition-all duration-300`}
-        >
-          <span className="w-48 rounded-2xl bg-gray-100 px-3 py-1 font-semibold text-cyan-800">
-            Copied WeChat ID!
-          </span>
-        </div>
+        {/* 2. 使用 Portal 将提示框渲染到 document.body */}
+        {createPortal(
+          <div
+            className={`fixed top-10 left-1/2 z-50 -translate-x-1/2 ${
+              isCopied
+                ? "translate-y-0 opacity-100"
+                : "-translate-y-5 opacity-0"
+            } pointer-events-none transition-all duration-300`}
+          >
+            <span className="w-48 rounded-2xl bg-gray-800/80 px-3 py-1 font-semibold text-gray-100 backdrop-blur-sm">
+              Copied WeChat ID!
+            </span>
+          </div>,
+          document.body,
+        )}
       </div>
     </div>
   );

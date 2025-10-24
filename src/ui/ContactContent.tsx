@@ -12,7 +12,10 @@ function ContactContent() {
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
     // Handle form submission logic here
-    if (formRef.current) sendEmail(formRef.current);
+    if (formRef.current) {
+      formRef.current.time.value = new Date().toString();
+      sendEmail(formRef.current);
+    }
   }
 
   return (
@@ -60,6 +63,9 @@ function ContactContent() {
             placeholder="Your Message"
             className="h-64 w-full rounded-lg p-2 ring-1 ring-gray-300 focus:ring-2 focus:ring-cyan-700 focus:outline-none"
           ></textarea>
+        </div>
+        <div>
+          <input type="hidden" id="time-input" name="time" />
         </div>
         <button
           type="submit"

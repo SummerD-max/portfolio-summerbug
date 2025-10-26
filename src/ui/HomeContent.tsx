@@ -55,7 +55,7 @@ function HomeContent() {
       className="w-full max-w-5xl px-2 opacity-0 transition-all duration-1500 md:mt-0"
       ref={contentRef}
     >
-      <div className="grid grid-cols-1 items-center justify-items-center gap-x-50 gap-y-10 md:grid-cols-2">
+      <div className="grid grid-cols-1 items-center gap-x-50 gap-y-10 md:grid-cols-2">
         <div className="order-2 md:order-none">
           <p className="text-base">Hi,</p>
           <p className="text-5xl/20 font-semibold">I'm Summerbug</p>
@@ -83,7 +83,7 @@ function HomeContent() {
             placeholder="/photo-placeholder.jpg"
             src="/photo.jpg"
             alt="photo"
-            className="rounded-xl"
+            className="rounded-xl md:scale-120"
           />
         </div>
       </div>

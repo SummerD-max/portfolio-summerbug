@@ -1,9 +1,44 @@
 import { useEffect, useRef } from "react";
 import { HiArrowDownRight } from "react-icons/hi2";
 import ContactIcons from "./ContactIcons";
+import LazyImage from "./LazyImage";
 
 function HomeContent() {
   const contentRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
+
+  useEffect(function () {
+    const imgEl = imageRef.current;
+    if (!imgEl) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        const realSrc = imgEl.getAttribute("data-src");
+        if (!realSrc) return;
+
+        // 创建一个临时 Image 对象来预加载
+        const loader = new Image();
+
+        loader.onload = function () {
+          // ✅ 只有当真实图片加载成功后，才替换 src
+          imgEl.src = realSrc;
+          imgEl.removeAttribute("data-src");
+        };
+
+        loader.onerror = function () {
+          console.error("Failed to load image:", realSrc);
+          // 可选：加载失败时的处理，比如保持占位图或显示错误图
+        };
+
+        // 开始预加载真实图片
+        loader.src = realSrc;
+
+        observer.unobserve(entry.target);
+      }
+    });
+
+    observer.observe(imgEl);
+  }, []);
 
   useEffect(function () {
     const contentEl = contentRef.current;
@@ -42,19 +77,14 @@ function HomeContent() {
           </a>
         </div>
 
+        {/* lazy load img */}
         <div className="order-1 md:order-none">
-          <div className="relative max-w-96 md:ml-auto">
-            <img
-              loading="lazy"
-              src="/photo.jpg"
-              alt="photo"
-              className="relative z-10 rounded-2xl"
-            />
-            <div className="absolute -top-1 -left-1 h-24 w-24 rounded-lg bg-sky-600"></div>
-            <div className="absolute -top-1 -right-1 h-24 w-24 rounded-lg bg-purple-600"></div>
-            <div className="absolute -bottom-1 -left-1 h-24 w-24 rounded-lg bg-yellow-600"></div>
-            <div className="absolute -right-1 -bottom-1 h-24 w-24 rounded-lg bg-green-600"></div>
-          </div>
+          <LazyImage
+            placeholder="/photo-placeholder.jpg"
+            src="/photo.jpg"
+            alt="photo"
+            className="rounded-xl"
+          />
         </div>
       </div>
     </div>

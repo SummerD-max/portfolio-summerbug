@@ -9,6 +9,7 @@ type LazyImageProps = {
 
 function LazyImage({ src, placeholder, alt, className }: LazyImageProps) {
   const imageRef = useRef<HTMLImageElement>(null);
+  const [status, setStatus] = useState("loading");
 
   useEffect(
     function () {
@@ -17,11 +18,10 @@ function LazyImage({ src, placeholder, alt, className }: LazyImageProps) {
 
       const observer = new IntersectionObserver(([entry]) => {
         if (entry.isIntersecting) {
-          const img = new Image();
-          img.onload = () => {
-            imageEl.src = src;
+          imageEl.src = src;
+          imageEl.onload = () => {
+            setStatus("loaded");
           };
-          img.src = src;
         }
       });
 
@@ -32,7 +32,12 @@ function LazyImage({ src, placeholder, alt, className }: LazyImageProps) {
 
   return (
     <>
-      <img ref={imageRef} src={placeholder} alt={alt} className={className} />
+      <img
+        ref={imageRef}
+        src={placeholder}
+        alt={alt}
+        className={`${className} ${status === "loading" ? "blur-2xl" : "translate-0 blur-none"} transition-all duration-300`}
+      />
     </>
   );
 }

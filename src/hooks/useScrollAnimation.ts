@@ -11,7 +11,7 @@ export function useScrollAnimation() {
     element.classList.add(
       "opacity-0",
       "transition-all",
-      "duration-1000", // 统一动画时长
+      "duration-1000",
       "mt-10",
     );
 

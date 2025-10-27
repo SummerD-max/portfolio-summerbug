@@ -30,16 +30,18 @@ function ContactContent() {
           </span>
         </h3>
 
-        <p className="mt-10">Let's create something amazing together!</p>
+        <p className="mt-10 text-stone-700 dark:text-slate-50">
+          Let's create something amazing together!
+        </p>
 
         <ContactIcons />
       </div>
       <form
-        className="flex w-full flex-col gap-2 rounded-xl bg-blue-50 px-10 py-8 shadow-lg"
+        className="flex w-full flex-col gap-2 rounded-xl bg-slate-50 px-10 py-8 shadow-lg dark:bg-slate-600"
         onSubmit={handleSubmit}
         ref={formRef}
       >
-        <p className="flex items-center gap-2 pb-5 text-2xl font-semibold text-cyan-800">
+        <p className="flex items-center gap-2 pb-5 text-2xl font-semibold text-cyan-800 dark:text-cyan-500">
           Send me a message! <IoChatbox />
         </p>
         <div>
@@ -47,7 +49,7 @@ function ContactContent() {
             name="name"
             type="text"
             placeholder="Your Name"
-            className="w-full rounded-lg p-2 ring-1 ring-gray-300 focus:ring-2 focus:ring-cyan-700 focus:outline-none"
+            className="w-full rounded-lg p-2 ring-1 ring-gray-300 placeholder:text-stone-500 focus:ring-2 focus:ring-cyan-700 focus:outline-none"
           />
         </div>
         <div>
@@ -55,14 +57,14 @@ function ContactContent() {
             name="email"
             type="email"
             placeholder="Your Email"
-            className="w-full rounded-lg p-2 ring-1 ring-gray-300 focus:ring-2 focus:ring-cyan-700 focus:outline-none"
+            className="w-full rounded-lg p-2 ring-1 ring-gray-300 placeholder:text-stone-500 focus:ring-2 focus:ring-cyan-700 focus:outline-none"
           />
         </div>
         <div>
           <textarea
             name="message"
             placeholder="Your Message"
-            className="h-64 w-full rounded-lg p-2 ring-1 ring-gray-300 focus:ring-2 focus:ring-cyan-700 focus:outline-none"
+            className="h-64 w-full rounded-lg p-2 ring-1 ring-gray-300 placeholder:text-stone-500 focus:ring-2 focus:ring-cyan-700 focus:outline-none"
           ></textarea>
         </div>
         <div>

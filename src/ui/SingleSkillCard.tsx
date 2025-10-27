@@ -5,7 +5,7 @@ type SingleSkillCardProps = {
 
 function SingleSkillCard({ icon, skillName }: SingleSkillCardProps) {
   return (
-    <div className="flex h-32 w-32 flex-col items-center justify-center gap-2 rounded-lg bg-sky-100 p-5 shadow-sm">
+    <div className="flex h-32 w-32 flex-col items-center justify-center gap-2 rounded-lg bg-sky-100 p-5 text-slate-700 shadow-sm dark:bg-gray-700 dark:text-slate-50">
       {icon}
       <span className="text-center">{skillName}</span>
     </div>

@@ -12,8 +12,8 @@ function About() {
       ref={elementRef}
     >
       <div className="@container px-4">
-        <div className="mx-auto w-full py-20 transition-all duration-1500 @5xl:max-w-5xl">
-          <div>
+        <div className="mx-auto w-full py-20 @5xl:max-w-5xl">
+          <div className="">
             <SectionHeader part={1} title="My Story" />
             <AboutContent />
           </div>

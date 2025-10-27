@@ -3,10 +3,10 @@ import PersonalInfo from "./PersonalInfo";
 
 function AboutContent() {
   return (
-    <div className="grid grid-cols-1 items-center justify-items-center gap-8 text-stone-700 md:grid-cols-2">
+    <div className="grid grid-cols-1 items-center justify-items-center gap-8 text-slate-800 md:grid-cols-2 dark:text-slate-50">
       <div className="self-start">
         <div className="pb-6">
-          <h2 className="mb-10 hidden text-2xl text-cyan-600 md:block">
+          <h2 className="mb-10 hidden text-2xl font-semibold text-cyan-600 md:block">
             A little bit about me
           </h2>
 
@@ -30,29 +30,29 @@ function AboutContent() {
         </div>
       </div>
 
-      <div className="w-fit space-y-4">
-        <div className="flex items-center justify-around rounded-lg border border-stone-200 bg-white p-4 shadow-sm transition-all hover:shadow-md">
+      <div className="w-3/4 space-y-4">
+        <div className="flex items-center justify-around rounded-lg border border-stone-200 bg-white/25 p-4 shadow-sm transition-all hover:shadow-md dark:bg-gray-600/50">
           <div className="space-y-1">
-            <p className="flex items-center gap-2 font-bold text-cyan-700">
+            <p className="flex items-center gap-2 font-bold text-cyan-700 dark:text-cyan-500">
               <FaBookBible />
               Undergraduate
             </p>
-            <p className="font-semibold text-stone-800">Fuzhou University</p>
-            <p className="text-sm text-stone-600">Network Engineering</p>
+            <p className="font-semibold">Fuzhou University</p>
+            <p className="text-sm">Network Engineering</p>
           </div>
           <div>
             <img src="FZU.svg" alt="FZU" />
           </div>
         </div>
 
-        <div className="flex items-center justify-around rounded-lg border border-stone-200 bg-white p-4 shadow-sm transition-all hover:shadow-md">
+        <div className="flex items-center justify-around rounded-lg border border-stone-200 bg-white/25 p-4 shadow-sm transition-all hover:shadow-md dark:bg-gray-600/50">
           <div className="space-y-1">
-            <p className="flex items-center gap-2 font-bold text-cyan-700">
+            <p className="flex items-center gap-2 font-bold text-cyan-700 dark:text-cyan-500">
               <FaBookAtlas />
               Postgraduate
             </p>
-            <p className="font-semibold text-stone-800">Fuzhou University</p>
-            <p className="text-sm text-stone-600">Computer Science Tech</p>
+            <p className="font-semibold">Fuzhou University</p>
+            <p className="text-sm">Computer Science Tech</p>
           </div>
           <div>
             <img src="FZU.svg" alt="FZU" />

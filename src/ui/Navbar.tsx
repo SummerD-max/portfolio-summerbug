@@ -7,7 +7,7 @@ function Navbar() {
 
   const styleStr = isTop
     ? "bg-transparent text-slate-50"
-    : "bg-slate-50/50 text-stone-700 shadow-md backdrop-blur-md";
+    : "bg-slate-50/50 text-slate-800 text-stone-700 shadow-md backdrop-blur-md";
 
   return (
     <>

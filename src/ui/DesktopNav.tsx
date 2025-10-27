@@ -1,11 +1,18 @@
 import { HiOutlineSun } from "react-icons/hi";
 import { useScrollspy } from "../hooks/useScrollSpy";
+import { useDarkModeContext } from "../contexts/DarkModeContext";
+import { HiOutlineMoon } from "react-icons/hi2";
 
 function DesktopNav() {
   const activeSection = useScrollspy(
     ["home", "about", "skills", "projects", "contact"],
     "-20% 0px -80% 0px",
   );
+  const { darkMode, setDarkMode } = useDarkModeContext();
+
+  function toggleDarkMode() {
+    setDarkMode((prevMode) => !prevMode);
+  }
 
   return (
     // 使用 hidden 和 md:flex 来控制可见性
@@ -38,9 +45,16 @@ function DesktopNav() {
         </li>
       </ul>
       <div className="flex items-center gap-4">
-        <button className="cursor-pointer rounded-full border-1 border-slate-300 bg-slate-100/60 p-2 text-stone-700 transition-all duration-300 hover:bg-gray-200 hover:text-stone-900">
+        <button
+          className="cursor-pointer rounded-full border-1 border-slate-300 bg-slate-100/60 p-2 text-stone-700 transition-all duration-300 hover:bg-gray-200 hover:text-stone-900"
+          onClick={toggleDarkMode}
+        >
           <span>
-            <HiOutlineSun size={24} className="z-10" />
+            {darkMode ? (
+              <HiOutlineSun size={24} className="z-10" />
+            ) : (
+              <HiOutlineMoon size={24} className="z-10" />
+            )}
           </span>
         </button>
         <a

@@ -19,11 +19,11 @@ function Skills() {
   return (
     <section
       id="skills"
-      className="border-b-1 border-gray-500/20 bg-blue-50"
+      className="border-b-1 border-gray-500/20"
       ref={elementRef}
     >
       <div className="@container px-4">
-        <div className="mx-auto py-20 transition-all duration-1500 @5xl:max-w-5xl">
+        <div className="mx-auto py-20 @5xl:max-w-5xl">
           <div>
             <SectionHeader part={2} title="Skills" />
 

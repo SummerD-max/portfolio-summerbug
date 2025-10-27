@@ -43,16 +43,15 @@ function HomeContent() {
   useEffect(function () {
     const contentEl = contentRef.current;
     if (!contentEl) return;
-
     setTimeout(() => {
-      contentEl.classList.remove("opacity-0");
-      contentEl.classList.add("opacity-100");
+      contentEl.classList.remove("opacity-0", "mt-10");
+      contentEl.classList.add("opacity-100", "mt-0");
     }, 100);
   }, []);
 
   return (
     <div
-      className="w-full max-w-5xl px-2 opacity-0 transition-all duration-1500 md:mt-0"
+      className="mt-10 w-full max-w-6xl px-10 opacity-0 transition-all duration-1500"
       ref={contentRef}
     >
       <div className="grid grid-cols-1 items-center gap-x-50 gap-y-10 md:grid-cols-2">

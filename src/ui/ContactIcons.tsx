@@ -45,7 +45,7 @@ function ContactIcons() {
               </div>
             </Popup.ToggleButton>
             <Popup.Content>
-              <img src="/wechat.jpg" className="" />
+              <img src="/wechat.webp" className="" />
             </Popup.Content>
           </Popup>
         </div>

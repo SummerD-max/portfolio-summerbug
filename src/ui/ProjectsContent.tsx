@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCard";
 const projectsData = [
   {
     id: 1,
-    imageUrl: "/projects/the-wild-oasis.png",
+    imageUrl: "/projects/the-wild-oasis.webp",
     title: "The Wild Oasis",
     description:
       "Hotel management app - full-featured React web application that allows hotel employees to manage cabins, bookings, and guests. ",
@@ -14,7 +14,7 @@ const projectsData = [
   },
   {
     id: 2,
-    imageUrl: "/projects/MyMovieCollector.png",
+    imageUrl: "/projects/MyMovieCollector.webp",
     title: "My Movie Collector",
     description:
       "A movie collection app that enables users to watch, add to favorites, and manage their personal movie library.",
@@ -24,7 +24,7 @@ const projectsData = [
   },
   {
     id: 3,
-    imageUrl: "/projects/weather-outfit.png",
+    imageUrl: "/projects/weather-outfit.webp",
     title: "Weather Outfit",
     description:
       "A weather application that recommends outfits based on current weather conditions.",
@@ -41,7 +41,7 @@ const projectsData = [
   },
   {
     id: 4,
-    imageUrl: "/projects/fast-react-pizza.png",
+    imageUrl: "/projects/fast-react-pizza.webp",
     title: "Fast React Pizza",
     description:
       "Users can order one or more pizzas from a menu. Built with a 3rd party API. User can add multiple pizzas in the cart and order them. Also, they can search the ordered pizza to know the status.",

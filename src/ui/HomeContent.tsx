@@ -45,8 +45,8 @@ function HomeContent() {
         {/* lazy load img */}
         <div className="order-1 md:order-none">
           <LazyImage
-            placeholder="/photo-placeholder.jpg"
-            src="/photo.jpg"
+            placeholder="/photo-placeholder.webp"
+            src="/photo.webp"
             alt="photo"
             className="rounded-xl md:scale-120"
           />

@@ -1,7 +1,5 @@
-import { FaArrowCircleUp } from "react-icons/fa";
 import { useNavTopContext } from "../contexts/NavTopContext";
-import { FaRocket } from "react-icons/fa6";
-import { PiRocketDuotone, PiRocketLaunch } from "react-icons/pi";
+import { PiRocketDuotone } from "react-icons/pi";
 
 function BackToTopButton() {
   const { isTop } = useNavTopContext();

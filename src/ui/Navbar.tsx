@@ -1,9 +1,9 @@
-import { useNavIsTop } from "../hooks/useNavIsTop";
+import { useNavTopContext } from "../contexts/NavTopContext";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 
 function Navbar() {
-  const { isTop, observeRef } = useNavIsTop();
+  const { isTop, navElementRef } = useNavTopContext();
 
   const styleStr = isTop
     ? "bg-transparent text-slate-50"
@@ -11,7 +11,7 @@ function Navbar() {
 
   return (
     <>
-      <div className="h-0" ref={observeRef}></div>
+      <div className="h-0" ref={navElementRef}></div>
       <nav className={`fixed top-2 z-20 w-full px-4 py-2`}>
         <div
           className={`mx-auto flex max-w-7xl items-center justify-between rounded-full ${styleStr} px-6 py-1 transition-all duration-500`}
